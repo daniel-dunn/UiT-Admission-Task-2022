@@ -80,4 +80,3 @@ if __name__ == '__main__':
         re_int = roman_to_int(roman)
         print(str(index) + ':' + roman + ':' + str(re_int))
 
-    #print(str(2) + ':' + int_to_roman(2) + ':' + str(roman_to_int(int_to_roman(2))))
