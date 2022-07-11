@@ -49,19 +49,35 @@ def int_to_roman(val):
 
     return roman_str
 
+
 def roman_to_int(numeral):
-    characters = list(numeral)
-
-    return
-
+    return_int = 0
+    letters = list(numeral)
+    while len(letters) > 0:
+        if len(letters) == 1:
+            return_int += get_int(letters.pop(0))
+        else:
+            if get_int(letters[0]) < get_int(letters[1]):
+                return_int += get_int(letters[0] + letters[1])
+                letters.pop(0)
+                letters.pop(0)
+            else:
+                return_int += get_int(letters.pop(0))
+    return return_int
 
 def get_int(letter):
     for number, numeral in romanNumeralDictionary.items():
-        if  == value:
-            return key
+        if numeral == letter:
+            return number
 
     print("There is no valid numeral")
 
+
 if __name__ == '__main__':
-    for numbers in range(1, 4000):
-        print(str(numbers) + " : " + str(int_to_roman(numbers)))
+
+    for index in range(1, 4000):
+        roman = int_to_roman(index)
+        re_int = roman_to_int(roman)
+        print(str(index) + ':' + roman + ':' + str(re_int))
+
+    #print(str(2) + ':' + int_to_roman(2) + ':' + str(roman_to_int(int_to_roman(2))))
