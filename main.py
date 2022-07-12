@@ -71,11 +71,15 @@ def roman_to_int(numeral):
         if len(letters) == 1:
             return_int += get_int(letters.pop(0))
         else:
-            if get_int(letters[0]) < get_int(letters[1]):
-                return_int += get_int(letters.pop(0) + letters.pop(0))
-
+            v1 = get_int(letters[0])
+            v2 = get_int(letters[1])
+            if v1 < v2 :
+                return_int += (v2 - v1)
+                letters.pop(0)
+                letters.pop(0)
             else:
-                return_int += get_int(letters.pop(0))
+                return_int += v1
+                letters.pop(0)
     return return_int
 
 
