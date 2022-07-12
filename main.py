@@ -1,4 +1,6 @@
-# This dictionnary is the main driver for conversion between Roman numerals and integers
+# This dictionary is the main driver for conversion between Roman numerals and integers
+import time
+
 romanNumeralDictionary = {
     1000: 'M',
     900: 'CM',
@@ -92,8 +94,9 @@ def get_int(letter):
 
 
 if __name__ == '__main__':
-
+    start_time = time.time()
     for index in range(1, 4000):
         roman = int_to_roman(index)
         re_int = roman_to_int(roman)
         print(str(index) + ':' + roman + ':' + str(re_int))
+    print("Execution time :   %s s" % (time.time() - start_time))
